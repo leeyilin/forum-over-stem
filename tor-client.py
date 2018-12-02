@@ -39,7 +39,7 @@ def main():
     with open('/tmp/tor/hostname', 'r') as f:
         server_hostname = f.read().strip()
 
-    http_get('http://'+server_hostname+'/get_my_ip', 'socks5h://localhost:7000')
+    #http_get('http://'+server_hostname+'/get_my_ip', 'socks5h://localhost:7000')
     
     #websocket.enableTrace(True)
     url = 'ws://'+server_hostname+'/websocket'

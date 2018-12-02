@@ -78,6 +78,13 @@ class MainHandler(tornado.web.RequestHandler):
         #return self.write('Ack!\n\n')
         return self.render('template/index.html', title='Discussion Forum', 
                 items=['to be,', 'or not to be,', 'that is a question.'])
+    
+    def post(self):
+        print('One client posted me')
+        username = self.get_argument('username')
+        password = self.get_argument('password')
+        print('username:%s, password:%s' % (username, password))
+        return self.write('username: %s, password: %s\n' % (username, password))
 
 
 class IPHandler(tornado.web.RequestHandler):
